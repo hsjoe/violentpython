@@ -1,3 +1,19 @@
 
 1:https://www.python.org/dev/peps/pep-0257/
 2:代码表达了我的思想和灵魂
+3:vscode 的快捷键
+  {
+  ctrl+;     --> 注释
+  ctrl+alt+a -->''' '''
+  
+  }
+
+4:Emacs 块操作
+  ctrl+@ 设置mark
+  移动光标选择内容
+
+
+5:linux ctrl caps 交换
+使用setxkbmap命令。只需执行下面的命令：
+setxkbmap -option ctrl:swapcaps
+就行了。而且可以把命令放到~/.bashrc中，重复执行并不影响
