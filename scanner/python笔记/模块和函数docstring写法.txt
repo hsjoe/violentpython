@@ -17,3 +17,12 @@
 使用setxkbmap命令。只需执行下面的命令：
 setxkbmap -option ctrl:swapcaps
 就行了。而且可以把命令放到~/.bashrc中，重复执行并不影响
+
+
+6:linux终端缩小显示路径
+  if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+
+   将其中小写w改为大写W
