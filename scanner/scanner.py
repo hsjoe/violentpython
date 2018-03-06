@@ -1,14 +1,24 @@
 '''
 Author:joe
-Description:scanner of InterNet servers
-1、命令行参数解析 argparse
-2、获取了参数
-3、扫描命令行获取的主机地址和参数
+Description: scanner of InterNet servers
+1、模块 argparse
+2、获取命令行输入的目标地址和端口 ：Host，Port
 '''
 
-import socket
-import zipfile
 import argparse
+
+def get_tgthostandport():
+    '''
+    获取命令行输入的目标地址和端口
+    Parameters:
+        None
+    Returns:
+        (Host, Port)
+    '''
+    parser = argparse.ArgumentParser(description="Get Target Host and Port")
+
+
+
 
 
 
