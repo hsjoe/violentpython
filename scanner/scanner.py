@@ -18,8 +18,11 @@ def get_tgthostandport():
     '''
     parser = argparse.ArgumentParser(description="Get Target Host and Port")
     parser.add_argument('-H', dest='Host', action='store')
+    parser.add_argument('-p', dest='Port', action='store')
+    print(parser.args())
+    
 
-
+get_tgthostandport()
 
 
 
