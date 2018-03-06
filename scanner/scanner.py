@@ -1,7 +1,7 @@
 '''
 Author:joe
 Description: scanner of InterNet servers
-1、模块 argparse
+1、模块 argparse(Generic Operation System Services)
 2、获取命令行输入的目标地址和端口 ：Host，Port
 '''
 
@@ -17,7 +17,7 @@ def get_tgthostandport():
         (Host, Port)
     '''
     parser = argparse.ArgumentParser(description="Get Target Host and Port")
-
+    parser.add_argument('-H', dest='Host', action='store')
 
 
 
