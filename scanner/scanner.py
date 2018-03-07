@@ -15,18 +15,32 @@ def get_tgthostandport():
     Parameters:
         None
     Returns:
-        (Host, Port)
+        (host, port)
     '''
     parser = argparse.ArgumentParser(description="Get Target Host and Port")
-    parser.add_argument('-H', dest='Host', help='get host')
-    parser.add_argument('-p', dest='Port', type=int, help='get port')
+    parser.add_argument('-H', dest='Host', help='input host')
+    parser.add_argument('-p', dest='Port', nargs='+', type=int, help='input port')
     # print(parser.parse_args())
     address = parser.parse_args()
     host = address.Host
     port = address.Port
-    return (host, port)
+    print(type(host))
+    print(type(port))
+    return [host, port]
 
 
 ADDRESS = get_tgthostandport()
-
 print(ADDRESS)
+
+'''def port_scan():
+    
+    get the tgt_host_ip tgt_host_name
+    Paramters: None
+    Returns:
+    
+    
+
+def conn_scan():
+    pass
+
+'''
