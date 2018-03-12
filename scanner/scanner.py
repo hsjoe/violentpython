@@ -6,10 +6,12 @@ Description: scanner of InterNet servers
 1、模块 argparse(Generic Operation System Services)
 2、获取命令行输入的目标地址和端口 ：Host，Port
 3、-H host -p port
+4、多线程 加锁
 '''
 
 import argparse
 import socket
+import threading
 
 def get_tgthostandport():
     '''
@@ -33,6 +35,13 @@ def get_tgthostandport():
 
 
 def conn_scan(tg_host, tg_port):
+    '''
+    connect host port 
+    Paremters:
+        tg_host, tg_port
+    Returns:
+        None
+    '''
     try:
         conn_stk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         conn_stk.connect(tg_host, tg_port)
@@ -66,14 +75,13 @@ def port_scan():
     except:
         print('Can not get target ip by %s', tg_host)
         return
-    
+
     print('scan reslut for %s', tg_ip)
     socket.setdefaulttimeout(1)
 
     for tgport in tg_port:
         print('sanning port %d:', tgport)
         conn_scan(tg_host, tgport)
-    
 
 port_scan()
 
