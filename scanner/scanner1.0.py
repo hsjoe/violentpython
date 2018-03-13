@@ -49,11 +49,11 @@ def conn_scan(tg_host, tg_port):
         conn_stk.send("volient python\r\n")
         reslut = conn_stk.recv(1000)
         SCREEN_LOCK.acquire()
-        print('[+]%d is open'%(tg_port))
+        print('[+]%d tcp is open'%(tg_port))
         print('[+]' + str(reslut))
     except:
         SCREEN_LOCK.acquire()
-        print('[-]%d closed'%(tg_port))
+        print('[-]%d tcp closed'%(tg_port))
     finally:
         SCREEN_LOCK.release()
         conn_stk.close()
@@ -82,12 +82,17 @@ def port_scan():
         print('Can not get target ip by %s'%(tg_host))
         return
 
-    print('scan reslut for %s'%(tg_host))
+    try:
+        tg_name = socket.gethostbyaddr(tg_ip)
+        print('scan reslut for:' + tg_name[0])    
+    except:
+        print('[+]scan reslut for'+tg_ip)
+    
     socket.setdefaulttimeout(1)
 
     for tgport in tg_port:
-        print('sanning port %d:'%(tgport))
-        t = threading.Thread(target=conn_scan, args=(tg_host, tgport))
+        print('sanning port :'+str(tgport))
+        t = threading.Thread(target=conn_scan, args=(tg_host,int(tgport)))
         t.start()
 
 port_scan()
