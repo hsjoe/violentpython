@@ -84,9 +84,10 @@ def port_scan():
 
     try:
         tg_name = socket.gethostbyaddr(tg_ip)
-        print('scan reslut for:' + tg_name[0])    
+        print(tg_name)
+        print("\n scan reslut for:" + tg_name[0])    
     except:
-        print('[+]scan reslut for'+tg_ip)
+        print('\n[+]scan reslut for: '+tg_ip)
     
     socket.setdefaulttimeout(1)
 
