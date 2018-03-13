@@ -29,10 +29,11 @@ def get_tgthostandport():
     address = parser.parse_args()
     host = address.Host
     port = address.Port
-    print(type(host))
-    print(type(port))
+    #print(type(host))
+    #print(type(port))
     return [host, port]
 
+SCREEN_LOCK =threading.Semaphore(value=1)
 
 def conn_scan(tg_host, tg_port):
     '''
@@ -47,10 +48,15 @@ def conn_scan(tg_host, tg_port):
         conn_stk.connect(tg_host, tg_port)
         conn_stk.send("volient python\r\n")
         reslut = conn_stk.recv(1000)
-        print('[+]%d is open', tg_port)
+        SCREEN_LOCK.acquire()
+        print('[+]%d is open'%(tg_port))
         print('[+]' + str(reslut))
     except:
-        print('[-]%d closed', tg_port)
+        SCREEN_LOCK.acquire()
+        print('[-]%d closed'%(tg_port))
+    finally:
+        SCREEN_LOCK.release()
+        conn_stk.close()
 
 
     
@@ -81,7 +87,8 @@ def port_scan():
 
     for tgport in tg_port:
         print('sanning port %d:', tgport)
-        conn_scan(tg_host, tgport)
+        t = threading.Thread(target=conn_scan, args=(tg_host, tg_port))
+        t.start()
 
 port_scan()
 
