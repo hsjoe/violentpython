@@ -11,6 +11,7 @@
 4:Emacs 块操作
   ctrl+@ 设置mark
   移动光标选择内容
+  M-x linum-mode 显示行号
 
 
 5:linux ctrl caps 交换
