@@ -79,15 +79,15 @@ def port_scan():
     try:
         tg_ip = socket.gethostbyname(tg_host)
     except:
-        print('Can not get target ip by %s', tg_host)
+        print('Can not get target ip by %s'%(tg_host))
         return
 
-    print('scan reslut for %s', tg_ip)
+    print('scan reslut for %s'%(tg_host))
     socket.setdefaulttimeout(1)
 
     for tgport in tg_port:
-        print('sanning port %d:', tgport)
-        t = threading.Thread(target=conn_scan, args=(tg_host, tg_port))
+        print('sanning port %d:'%(tgport))
+        t = threading.Thread(target=conn_scan, args=(tg_host, tgport))
         t.start()
 
 port_scan()
