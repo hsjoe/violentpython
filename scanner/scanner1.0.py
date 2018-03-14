@@ -13,6 +13,8 @@ import argparse
 import socket
 import threading
 
+SCREEN_LOCK = threading.Semaphore(value=1)
+
 def get_tgthostandport():
     '''
     获取命令行输入的目标地址和端口
@@ -33,11 +35,11 @@ def get_tgthostandport():
     #print(type(port))
     return [host, port]
 
-SCREEN_LOCK =threading.Semaphore(value=1)
+
 
 def conn_scan(tg_host, tg_port):
     '''
-    connect host port 
+    connect host port
     Paremters:
         tg_host, tg_port
     Returns:
@@ -45,9 +47,9 @@ def conn_scan(tg_host, tg_port):
     '''
     try:
         conn_stk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        conn_stk.connect(tg_host, tg_port)
-        conn_stk.send("volient python\r\n")
-        reslut = conn_stk.recv(1000)
+        conn_stk.connect((tg_host, tg_port))
+        conn_stk.send(b"hello/r/n")
+        reslut = conn_stk.recv(100)
         SCREEN_LOCK.acquire()
         print('[+]%d tcp is open'%(tg_port))
         print('[+]' + str(reslut))
@@ -57,9 +59,7 @@ def conn_scan(tg_host, tg_port):
     finally:
         SCREEN_LOCK.release()
         conn_stk.close()
-
-
-    
+   
 
 
 '''
@@ -87,17 +87,20 @@ def port_scan():
         print(tg_name)
         print("\n scan reslut for:" + tg_name[0])    
     except:
-        print('\n[+]scan reslut for: '+tg_ip)
+        print('\n[+]scan reslut for: ' + tg_ip + ' : ' + tg_host)
     
-    socket.setdefaulttimeout(1)
+    socket.setdefaulttimeout(10)
 
     for tgport in tg_port:
         print('sanning port :'+str(tgport))
+        #conn_scan(tg_host, int(tgport))
         t = threading.Thread(target=conn_scan, args=(tg_host,int(tgport)))
         t.start()
 
-port_scan()
+# port_scan()
 
+if __name__ == '__main__':
+    port_scan()
 
 
 
