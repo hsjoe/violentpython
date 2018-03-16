@@ -59,7 +59,6 @@ def conn_scan(tg_host, tg_port):
     finally:
         SCREEN_LOCK.release()
         conn_stk.close()
-   
 
 
 '''
@@ -85,10 +84,10 @@ def port_scan():
     try:
         tg_name = socket.gethostbyaddr(tg_ip)
         print(tg_name)
-        print("\n scan reslut for:" + tg_name[0])    
+        print("\n scan reslut for:" + tg_name[0])
     except:
         print('\n[+]scan reslut for: ' + tg_ip + ' : ' + tg_host)
-    
+
     socket.setdefaulttimeout(10)
 
     for tgport in tg_port:
@@ -101,6 +100,3 @@ def port_scan():
 
 if __name__ == '__main__':
     port_scan()
-
-
-
