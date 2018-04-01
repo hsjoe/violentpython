@@ -13,8 +13,9 @@
 
 有两种方式使用我们自己指定的镜像源，第一种是手动指定：
 
-pip -i http://pypi.douban.com/simple install Flask -- trusted-host pypi.douban.com
+pip  install Flask -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent
 不过这种方式在每次安装时都要手动指定，因此你可以把它写在配置文件中，这就是第二种方法，在当前用户目录下创建.pip文件夹
 
 mkdir ~/.pip
