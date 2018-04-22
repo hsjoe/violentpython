@@ -2,3 +2,7 @@ Python 函数中，参数是传值，还是传引用
 
 https://foofish.net/python-function-args.html
 Python 函数中，参数的传递本质上是一种赋值操作，而赋值操作是一种名字到对象的绑定过程
+
+http://www.cnblogs.com/linxiyue/p/3551633.html
+
+python 链表
