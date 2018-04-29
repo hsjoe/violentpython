@@ -1,0 +1,20 @@
+DOS命令diskpart格式化磁盘
+2016年10月27日 17:14:17
+阅读数：18294
+1  win + r   -> cmd  进入dos
+
+2  输入 diskpart
+
+3  list disk  查看都有哪些磁盘
+
+4  select disk 1(选择要格式化的磁盘前面的编号)
+
+5  clean(确定磁盘中的东西都没用了,这一步是直接把分区都给删了)
+
+6  creat partition primary  (创建分区)
+
+7  format fs=ntfs(或fat32) quick label="u盘名称"   (这一步是格式化分好的区)
+
+
+
+完成!    注意第4步  选择磁盘   一定要选对  否则操作错了无法挽回。
