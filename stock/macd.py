@@ -6,7 +6,7 @@ import os
 import tushare as ts
 import matplotlib.pyplot as plt
 
-os.system('del 000425.csv')
+os.system('del E:/violent_python/000425.csv')
 
 df = ts.get_k_data('000425') 
 df = df.drop('code', axis=1)
@@ -18,5 +18,8 @@ df['dea'] = pd.Series(df['dif']).ewm(span=12).mean()
 
 df['macd'] = 2*(df['dif']-df['dea'])
 
-filename = 'E:/violent_python/000425.csv'
+df = df.round({'dif':2,'dea':2,'macd':2})
+
+filename = r'E:/violent_python/000425.csv'
 df.to_csv(filename)
+
