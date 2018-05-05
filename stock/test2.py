@@ -1,5 +1,5 @@
-import tushare as ts
+import array
 
-re = ts.fund_holdings(2018,4)
+a = array.array('i',[1,2,3])
 
-print(re)
+print(type(a))
