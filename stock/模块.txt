@@ -1,0 +1,48 @@
+模块名	简介	文档链接
+talib	TA-Lib 是一个被交易员/程序员常用的金融数据技术分析库。包含了超过150+的技术指标比如ADX,MACD,RSI,Stochastic,Bollinger Bands等	TA-Lib官网
+pandas	最流行的Python数据分析库	pandas文档
+numpy	numpy是一个Python的科学计算基础库。	numpy文档
+scipy	SciPy是一个Python的数学、科学和工程计算的生态系统库。	scipy文档
+statsmodels	Statsmodels是一个Python的模块可以让您研究数据，构架统计模型和进行统计测试。功能包括：线性回归模型（Linear regression models）等	statsmodels文档
+bisect	Python的排序模块	bisect文档
+cmath	提供可以对复数计算的数学模块	cmath文档
+collections	提供除了Python内嵌的容器之外的容器种类选择 - dict, list, set 和 tuple	collections文档
+sklearn	Python的机器学习模块（machine learning）	sklearn文档
+hmmlearn	Python的隐马尔可夫模型（Hidden Markov Models）模块，类似scikit-learn的API	hmmlearn文档
+hsmmlearn	Python的无监督学习隐马尔可夫模型（Hidden Markov Models）模块，类似scikit-learn的API	hsmmlearn文档
+pykalman	超级简单的卡尔曼滤波（Kalman Filter）, Kalman Smoother和EM模块	pykalman文档
+cvxopt	cvxopt提供了凸优化（convex optimization）的解的python库。	cvxopt文档
+arch	arch提供了Univariate volatility模型，Bootstrapping和Multiple comparison procedures	arch文档
+dateutil	dateutil模块提供了对标准的datetime模块的强大的拓展	dateutil文档
+Edward	一个用于概率建模、推理和评估的 Python 库,融合了以下三个领域：贝叶斯统计学和机器学习、深度学习、概率编程	Edward文档
+Funcat	将同花顺、通达信、文华财经等的公式移植到了 Python 中	Funcat文档
+datetime		datetime文档
+functools		functools文档
+heapq		heapq文档
+pywt	PyWavelets是一个Python的小波变换的库	pywt文档
+tensorflow	Tensor flow is an open source software library for machine intelligence.	tensorflow文档
+tushare	国内流行的开源数据库，燥起来吧，各种数据。	tushare网站
+pybrain	pybrain是一个流行的机器学习库。PyBrain is a modular Machine Learning Library for Python.	pybrain文档
+nltk	一个流行的人类语言分析库。	nltk文档
+keras	Theano和Tensorflow的深度学习库。	keras文档
+requests	易用的HTTP库	requests文档
+bs4	beautifulsoup是网页爬取数据的利器！	beautifulsoupd文档
+lxml	处理XML和HTML的最好用的python库	lxml中文文档
+urllib	python自带的url处理库	urllib文档
+xgboost	速度快效果好的boosting模型	xgboost文档
+plotly	强大优美的图表库，支持三种不同类型的图表，包括地图，箱形图和密度图，以及更常见的产品如，条状和线形图	plotly文档
+fbprophet	简单强大的数据预测工具包	Prophet使用指南
+pytorch	流行的神经网络工具包	Pytorch文档
+sonnet	基于tensorflow快速构建神经网络的工具	sonnet文档
+itertools		itertools文档
+math		math文档
+pytz		pytz文档
+queue		queue文档
+random		random文档
+re		re文档
+time		time文档
+array		array文档
+copy		copy文档
+json		json文档
+operator		operator文档
+xml	
