@@ -31,9 +31,10 @@ df['dea'] = pd.Series(df['dif']).ewm(span=9).mean()
 df = df.round({'dif':2,'dea':2})
 #df = df.fillna(0, inplace=True)
 df['macd'] = 2*(df['dif']-df['dea'])
-
+ds = df[df.macd == 0]
+#dc = df.loc[df['macd'] == 0, ['date', 'open', 'close']]
 #df = df.round({'dif':2,'dea':2})
 
 
-df.to_csv(file_name)
+ds.to_csv(file_name)
 
