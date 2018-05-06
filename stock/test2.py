@@ -1,5 +1,3 @@
-import tushare as ts
+s = input('please input your stock code')
 
-re = ts.fund_holdings(2018,4)
-
-print(re)
+print(s)
