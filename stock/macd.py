@@ -35,6 +35,14 @@ ds = df[df.macd == 0]
 #dc = df.loc[df['macd'] == 0, ['date', 'open', 'close']]
 #df = df.round({'dif':2,'dea':2})
 
+for i in ds:
+    if df.iloc[i+1, 7] > df.iloc[i+1, 8]:
+        df.iloc[i+1, 10] = '上升'
+    elif df.iloc[i+1, 7] < df.iloc[i+1, 8]:
+        df.iloc[i+1, 10] = '下降'
+    else:
+        continue
 
-ds.to_csv(file_name)
+df.to_csv(file_name)
+
 
